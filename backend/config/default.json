@@ -1,0 +1,7 @@
+{
+    "mongo_url": "mongodb://127.0.0.1:27017/kpopmerch",
+
+    "jwtSecret": "jwtSecret",
+    "tokenExpire":"2592000"
+    
+}

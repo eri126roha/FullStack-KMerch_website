@@ -1,0 +1,83 @@
+/* Styles for the merch list */
+html{
+  overflow: hidden;
+}
+.merch-item {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.merch-image {
+  margin-right: 20px;
+  width: 250px;   /* Fixed width */
+  height: auto;   /* Height adjusts automatically to maintain aspect ratio */
+  object-fit: contain; /* This ensures the entire image fits within the specified size without cropping */
+}
+
+.merch-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.merch-details h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.merch-details p {
+  margin: 5px 0;
+}
+
+.merch-details strong {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .merch-item {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .merch-image {
+      max-width: 80%;
+  }
+}
+
+/* merchlist.component.css */
+
+.wishlist-btn, .purchase-btn {
+  width: 150px;  /* Fixed width */
+  height: 40px; 
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.wishlist-btn:disabled {
+  width: 150px;  /* Fixed width */
+  height: 40px; 
+  background-color: #ccc; /* Disabled button style */
+}
+
+/*Style for the 'Remove from Wishlist' button */
+.remove-from-wishlist {
+  background-color: red; /* Red for Remove from Wishlist */
+}
+
+.purchase-btn {
+  background-color: #008CBA; /* Blue */
+}
+
+.divblock {
+  position: relative;
+  margin-bottom: 90px;
+  float: left;
+}

@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="profile-container">
+  <form *ngIf="isEditing" (ngSubmit)="saveChanges()">
+    <!-- Form fields -->
+    <div>
+      <label for="username">Username:</label>
+      <input id="username" [(ngModel)]="user.username" name="username" required>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" [(ngModel)]="user.email" name="email" required>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input id="password" [(ngModel)]="user.password" name="password" type="password">
+    </div>
+
+    <button type="submit" [disabled]="!user.username || !user.email">Save Changes</button>
+    <button type="button" (click)="cancelEdit()">Cancel</button>
+  </form>
+
+  <!-- Success or error messages -->
+  <div *ngIf="successMessage" class="success-message">
+    <p>{{ successMessage }}</p>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Edit and Delete buttons -->
+  <div *ngIf="!isEditing">
+    <button (click)="updateProfile()">Edit Profile</button>
+    <button (click)="confirmDeleteAccount()">Delete Account</button>
+  </div>
+  </div>
+
+<app-footer></app-footer>
+

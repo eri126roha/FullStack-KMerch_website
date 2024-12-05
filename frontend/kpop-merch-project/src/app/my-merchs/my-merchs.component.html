@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="divblock">
+
+<ul>
+  <li *ngFor="let merch of myMerchs">
+    <div><strong>Name:</strong> {{ merch.name }}</div>
+    <div><strong>Description:</strong> {{ merch.description }}</div>
+    <div><strong>Price:</strong> {{ merch.price | currency }}</div> <!-- Displaying price as currency -->
+    <div><strong>Category:</strong> {{ merch.category }}</div>
+    <!--<img *ngIf="merch.imageUrl" [src]="getImageUrl(merch.imageUrl)" alt="{{ merch.name }}" class="merch-image">-->
+
+    <div><img [src]="getImageUrl(merch.imageUrl)" alt="Merch image" *ngIf="merch.imageUrl" class="merch-image" /> </div>
+    <button class="btn btn-primary" (click)="onUpdateMerch(merch.id)">Update</button>
+    <button class="btn btn-primary" (click)="deleteMerch(merch.id)">Delete</button>
+  </li>
+</ul>
+</div>
+
+<!-- Form for uploading and updating a merch item -->
+<!--<div *ngIf="selectedMerchId">
+  <h3>Update Merch</h3>
+  <form (ngSubmit)="onUpdateMerch(updatedMerch)">
+    <label>Name:</label>
+    <input type="text" class="form-control" [(ngModel)]="updatedMerch.name" name="name" required />
+
+    <label>Description:</label>
+    <input type="text" [(ngModel)]="updatedMerch.description" name="description" required />
+
+    <label>Price:</label>
+    <input type="number" [(ngModel)]="updatedMerch.price" name="price" required />
+
+    <label>Category:</label>
+    <input type="text" [(ngModel)]="updatedMerch.category" name="category" required />
+
+    <label>Upload Image:</label>
+    <input type="file" (change)="onImageSelected($event)" />
+
+    <button class="btn btn-primary" type="submit">Update Merch</button>
+  </form>
+</div>-->
+<div class="divblock">
+
+<app-footer></app-footer>
